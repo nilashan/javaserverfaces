@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>YSchool-Nilash</title>
+    </h:head>
+    <h:body>
+        <p:panel header="YSchool">
+            <h3>Welcome to YSchool</h3>
+            <h:form>
+                Your Name:<h:outputText value="&#160;&#160;&#160;&#160;&#160;&#160;&#160;"/><p:inputText value="#{helloBean.name}">
+                    <f:validateRequired />
+                </p:inputText><br></br><br></br>
+                Parent Name:<h:outputText value="&#160;&#160;&#160;&#160;"/><p:inputText value="#{helloBean.parent}"><f:validateRequired/></p:inputText><br></br><br></br>
+                Address:<h:outputText value="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"/><p:inputText value="#{helloBean.address}"></p:inputText><br></br><br></br>
+                Grade:<h:outputText value="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+                <p:selectOneMenu value="#{helloBean.grade}" >
+                    <f:selectItem itemValue="one" itemLabel="one" />
+                    <f:selectItem itemValue="two" itemLabel="two" />
+                    <f:selectItem itemValue="three" itemLabel="three" />
+                    <f:selectItem itemValue="four" itemLabel="four" />
+                    <f:selectItem itemValue="five" itemLabel="five" />
+                    <f:selectItem itemValue="six" itemLabel="six" />
+                    <f:selectItem itemValue="seven" itemLabel="seven" />
+                    <f:selectItem itemValue="eight" itemLabel="eight" />
+                    <f:selectItem itemValue="nine" itemLabel="nine" />
+                    <f:selectItem itemValue="ten" itemLabel="ten" />
+                    <f:selectItem itemValue="eleven" itemLabel="eleven" />
+                    <f:selectItem itemValue="twelve" itemLabel="twelve" />
+                    <f:selectItem itemValue="thirteen" itemLabel="thirteen" />
+                </p:selectOneMenu>
+                <br></br>
+
+                <br></br>
+                <p:commandButton value="Register" action="welcome"></p:commandButton>
+            </h:form>
+            <f:facet name="footer"> 
+                <h:outputText value="YSchool" /></f:facet>
+        </p:panel>
+    </h:body>
+    
+</html>
