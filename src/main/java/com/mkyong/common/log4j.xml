@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1252"?>
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd"> 
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"debug="false">
+    
+    
+    
+    
+    
+<!-- ================================= --> 
+<!-- Preserve messages in a local file --> 
+<!-- ================================= --> 
+<!-- A size based rolling appender --> 
+    <appender name="FILE" class="org.apache.log4j.FileAppender"> 
+        <param name="File" value="D:/log/myLogFile.log"/> 
+        <param name="Append" value="false"/> 
+        <layout class="org.apache.log4j.PatternLayout"> 
+            <param name="ConversionPattern" value="%d{ISO8601} %-5p [%c] %m%n"/> 
+        </layout> 
+    </appender> 
+    
+    
+    
+    
+<!-- ============================== --> 
+<!-- Append messages to the console --> 
+<!-- ============================== --> 
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender"> 
+        <param name="Target" value="System.out"/> 
+        <param name="Threshold" value="INFO"/> 
+        <layout class="org.apache.log4j.PatternLayout"> 
+        
+        
+        
+<!-- The default pattern: Date Priority [Category] Message\n --> 
+            <param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{1}] %m%n"/> 
+        </layout> 
+    </appender> 
+    
+    
+    
+    
+<!-- ================ --> 
+<!-- Limit categories --> 
+<!-- ================ --> 
+    <category name="org.myapp"> 
+        <priority value="MY_TRACE" class="org.myapp.log.MyTraceLevel" /> 
+        <appender-ref ref="FILE"/> 
+    </category> 
+    
+    
+    
+    
+    
+<!-- ======================= --> 
+<!-- Setup the Root category --> 
+<!-- ======================= --> 
+    <root> 
+        <appender-ref ref="CONSOLE"/> 
+    </root> 
+</log4j:configuration> 
+
+
